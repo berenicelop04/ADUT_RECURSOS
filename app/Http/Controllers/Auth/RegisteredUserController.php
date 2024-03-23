@@ -38,6 +38,8 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'ape_paterno' => ['required', 'string', 'max:255'],
+            'ape_materno' => ['required', 'string', 'max:255'],
             'gender' =>['required','numeric'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -45,6 +47,8 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            'ape_paterno' => $request->ape_paterno,
+            'ape_materno' => $request->ape_materno,
             'genderId'=>$request->gender,
             'id_rol'=>$request->role,
             'id_carrera'=>$request->carrera,

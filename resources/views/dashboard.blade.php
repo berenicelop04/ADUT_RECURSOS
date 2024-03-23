@@ -5,6 +5,7 @@
     @parent
   @endsection
 @section('content')
+
             <div class="page-title">
              <!--Fin--> 
             <div id="datatable_filter" class="dataTables_filter">
@@ -20,21 +21,27 @@
             <div class="clearfix"></div>
             <div class="row top_tiles">
             @if(Auth::user()->rol->rol == 'Administrador')
+            <h3>Dashboard Administrador</h3>
             <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <!--<div class="tile-stats">
-                  <div class="icon"><i class="fa fa-book"></i></div>
-                  <div class="count">Libro</div> 
-                  <h3>Administrador</h3>
-                  <br>
-                </div> -->
-                <h3>Dashboard Administrador</h3>
+               <!--INICIO --> 
+               <!-- div class="tile-stats">
+                </div>  -->
+                <!--FIN-->
+                <div class="count">
+               <pre> <a href="archivos/1/Dobot-Blockly-Workbook.pdf" type="application/pdf"  id="pdfLink" width="100%" height="600px">
+                <img src="images/1/libro_dobot.jpeg" id="pdfImage"  width="60%" height="500px" alt="No" />
+                </a> </pre>
+                </div> 
+               
                 <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                  <div class="mb-4">
-                    <img src="../public/images/administrador.jpg" class="h-auto max-w-full rounded-full" alt="No" />
-                   <a href="../../vistas/Leer_archivo/index.php?id=1&id_tipo_documento=3" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px"></a>
-
-                  </div>
+                <div class="mb-4">
+                
+                <a href="../archivos/2/Educacion_en_gastronomia_su_vinculo_con_la_identidad_cultural_y_el_turismo.pdf" type="application/pdf"  id="pdfLink" width="100%" height="600px">
+                <img src="../portadas/2/Educacion_en_gastronomia_su_vinculo_con_la_identidad_cultural_y_el_turismo.jpeg" id="pdfImage" width="60%" height="500px" alt="No" />
+                </a>
                 </div>
+                </div>
+
 
               </div>
               @endif
@@ -75,4 +82,6 @@
               </div>
               @endif
             </div>
+    
+
 @endsection

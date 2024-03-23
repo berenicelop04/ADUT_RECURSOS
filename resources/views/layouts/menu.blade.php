@@ -34,14 +34,14 @@
                   <li><a><i class="fa fa-users"></i>Administrar Usuario<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ route('usuario.index')}}">Listado</a></li>
-                      <li><a href="#">Administradores</a></li>
-                      <li><a href="#">Profesores</a></li>
-                      <li><a href="#">Alumnos</a></li>
+                      <li><a href="{{ route('administrador.index')}}">Administradores</a></li>
+                      <li><a href="{{ route('maestro.index')}}">Profesores</a></li>
+                      <li><a href="{{ route('alumno.index')}}">Alumnos</a></li>
                     </ul>
                   </li>    
                   <li><a><i class="fa fa-clock-o"></i>Historial<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Recientes</a></li>
+                      <li><a href="{{ route('recientes.index')}}">Recientes</a></li>
                       <li><a href="#">Favoritos</a></li>
                     </ul>
                   </li> 

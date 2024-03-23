@@ -4,11 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable; // ->SE COMENTO PORQUE ES DE SQL para mongodb
+// use Illuminate\Foundation\Auth\User as Authenticatable; // ->SE COMENTO PORQUE ES DE SQL para mongodb
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use MongoDB\Laravel\Eloquent\Model;
-// use MongoDB\Laravel\Auth\User as Authenticatable; //MongoDB
+use MongoDB\Laravel\Auth\User as Authenticatable; //MongoDB
 
 class User extends Authenticatable
 {
@@ -21,6 +21,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'ape_paterno',
+        'ape_materno',
         'genderId',
         'id_rol',
         'id_carrera',
@@ -48,9 +50,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
     // MongoDB -> Se comento por que voy a usar sql
-    /*protected $connection = "mongodb";
-    protected $collection = "users_collection"; //este es el nombre de la base de datos en mongo
-    protected $primarykey = "_id";*/ //el id es el de la coleccion de mongo
+    protected $connection = "mongodb";
+    protected $collection = "user"; //este es el nombre de la base de datos en mongo
+    protected $primarykey = "id"; //el id es el de la coleccion de mongo
 
 
     public function gender(){

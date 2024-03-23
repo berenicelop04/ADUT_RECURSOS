@@ -59,7 +59,14 @@
                         @foreach($data as $user)
                         <tr>
                           <td>{{ $cont }}</td>
-                          <td>{{ $user->name }}</td>
+                          <td>{{ $user->name }} 
+                          @if ($user->ape_paterno) 
+                           {{ $user->ape_paterno }} 
+                            @endif 
+                          @if ($user->ape_materno) 
+                           {{ $user->ape_materno }} 
+                            @endif
+                          </td>
                           <td>{{ $user->email }}</td>
                           <td>{{ $user->gender->descripcion }}</td>
                           <td>{{ $user->carrera->carrera}}</td>

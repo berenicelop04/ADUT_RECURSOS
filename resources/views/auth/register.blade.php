@@ -8,9 +8,22 @@
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
+         <!-- ape_paterno -->
+         <div>
+            <x-input-label for="ape_paterno" :value="__('Appellido Paterno')" />
+            <x-text-input id="ape_paterno" class="block mt-1 w-full" type="text" ape_paterno="ape_paterno" :value="old('ape_paterno')" required autofocus autocomplete="ape_paterno" />
+            <x-input-error :messages="$errors->get('ape_paterno')" class="mt-2" />
+        </div>
+         <!-- ape_paterno -->
+         <div>
+            <x-input-label for="ape_materno" :value="__('Appellido Materno')" />
+            <x-text-input id="ape_materno" class="block mt-1 w-full" type="text" ape_materno="ape_materno" :value="old('ape_materno')" required autofocus autocomplete="ape_materno" />
+            <x-input-error :messages="$errors->get('ape_materno')" class="mt-2" />
+        </div>
 
-        <!-- Género -->
-        <div class="mt-4">
+        <!-- Género
+    
+         <div class="mt-4">
             <x-input-label for="gender" :value="__('gender')" />
             <select name="gender" id="gender" class="block mt-1 w-full" :value="old('gender')" required autofocus>
                     @foreach ($data as $item)
@@ -19,6 +32,8 @@
             <select>
             <x-input-error :messages="$errors->get('gender')" class="mt-2" />           
         </div>
+        -->
+        
        <!-- Tipo de Usuario -->
        <div class="mt-4">
             <x-input-label for="role" :value="__('Tipo de usuario')" />
@@ -95,7 +110,7 @@
             </a>
 
             <x-primary-button class="ms-4">
-                {{ __('Register') }}
+                {{ __('Registrase') }}
             </x-primary-button>
         </div>
     </form>

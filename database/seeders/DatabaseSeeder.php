@@ -13,13 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       // \App\Models\User::factory(10)->create(); //Mongodb
+       \App\Models\User::factory(10)->create(); //Mongodb
 
-       // \App\Models\User::factory()->create([ //Mongodb
-       //      'name' => 'Test User', //Mongodb
-        //    'email' => 'test@example.com', //Mongodb
-        // ]);
-
+        \App\Models\User::factory()->create([ //Mongodb
+            'name' => 'Test User', //Mongodb
+            'email' => 'test@example.com', //Mongodb
+         ]);
+         $this->call([UserSeeder::class]);
         $this->call([GenderSeeder::class]);
         //$this->call([EditorialSeeder::class]);
         //$this->call([MateriaSeeder::class]);

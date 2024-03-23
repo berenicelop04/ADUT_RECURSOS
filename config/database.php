@@ -15,9 +15,9 @@ return [
     |
     */
 
-   'default' => env('DB_CONNECTION', 'mysql'),
+   //'default' => env('DB_CONNECTION', 'mysql'),
     //CONEXION MONGODB
-   // 'default' => env('MONGODB_CONNECTION', 'mongodb'),
+   'default' => env('MONGODB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -66,7 +66,12 @@ return [
         ],
         // LARAVEL / MONGODB
        /* 
-       
+       DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=adutmigracion1
+DB_USERNAME=root
+DB_PASSWORD=1234
        Esto en el .env 
        MONGODB_CONNECTION=mongodb
         MONGODB_HOST=127.0.0.1
@@ -74,19 +79,19 @@ return [
         MONGODB_DATABASE=app_laravel
         MONGODB_USERNAME=
         MONGODB_PASSWORD=
-
+*/
        'mongodb' => [
             'driver' => 'mongodb',
             'host' => env('MONGODB_HOST', '127.0.0.1'),
             'port' => env('MONGODB_PORT', 27017),
-            'database' => env('MONGODB_DATABASE', 'app_laravel'),
+            'database' => env('MONGODB_DATABASE', 'prueb_adut'),
             'username' => env('MONGODB_USERNAME'),
             'password' => env('MONGODB_PASSWORD'),
             'options' => [
                 
                     'database' => env('DB_AUTHENTICATION_DATABASE','admin'),
             ],
-        ], */
+        ], 
 
         'pgsql' => [
             'driver' => 'pgsql',

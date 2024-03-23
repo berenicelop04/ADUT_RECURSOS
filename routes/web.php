@@ -11,6 +11,12 @@ use App\Http\Controllers\LibrosController;
 use App\Http\Controllers\MemoriasController;
 use App\Http\Controllers\ArticulosController;
 use App\Http\Controllers\GuiasController;
+use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\MaestroController;
+use App\Http\Controllers\RecientesController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -131,4 +137,40 @@ Route::middleware('auth')->group(function () {
     Route::delete('/guias/delete/{id}', [GuiasController::class, 'destroy'])->name('guias.destroy');
     Route::post('/guias/store', [GuiasController::class, 'store'])->name('guias.store');
     Route::put('/guias/update/{id}', [GuiasController::class, 'update'])->name('guias.update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/administrador/list', [AdministradorController::class, 'index'])->name('administrador.index');
+    Route::get('/administrador/create', [AdministradorController::class, 'create'])->name('administrador.create');
+    Route::get('/administrador/edit/{id}', [AdministradorController::class, 'edit'])->name('administrador.edit');
+    Route::delete('/administrador/delete/{id}', [AdministradorController::class, 'destroy'])->name('administrador.destroy');
+    Route::post('/administrador/store', [AdministradorController::class, 'store'])->name('administrador.store');
+    Route::put('/administrador/update/{id}', [AdministradorController::class, 'update'])->name('administrador.update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/maestro/list', [MaestroController::class, 'index'])->name('maestro.index');
+    Route::get('/maestro/create', [MaestroController::class, 'create'])->name('maestro.create');
+    Route::get('/maestro/edit/{id}', [MaestroController::class, 'edit'])->name('maestro.edit');
+    Route::delete('/maestro/delete/{id}', [MaestroController::class, 'destroy'])->name('maestro.destroy');
+    Route::post('/maestro/store', [MaestroController::class, 'store'])->name('maestro.store');
+    Route::put('/maestro/update/{id}', [MaestroController::class, 'update'])->name('maestro.update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/alumno/list', [AlumnoController::class, 'index'])->name('alumno.index');
+    Route::get('/alumno/create', [AlumnoController::class, 'create'])->name('alumno.create');
+    Route::get('/alumno/edit/{id}', [AlumnoController::class, 'edit'])->name('alumno.edit');
+    Route::delete('/alumno/delete/{id}', [AlumnoController::class, 'destroy'])->name('alumno.destroy');
+    Route::post('/alumno/store', [AlumnoController::class, 'store'])->name('alumno.store');
+    Route::put('/alumno/update/{id}', [AlumnoController::class, 'update'])->name('alumno.update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/recientes/list', [RecientesController::class, 'index'])->name('recientes.index');
+    Route::get('/recientes/create', [RecientesController::class, 'create'])->name('recientes.create');
+    Route::get('/recientes/edit/{id}', [RecientesController::class, 'edit'])->name('recientes.edit');
+    Route::delete('/recientes/delete/{id}', [RecientesController::class, 'destroy'])->name('recientes.destroy');
+    Route::post('/recientes/store', [RecientesController::class, 'store'])->name('recientes.store');
+    Route::put('/recientes/update/{id}', [RecientesController::class, 'update'])->name('recientes.update');
 });
