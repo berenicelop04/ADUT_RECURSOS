@@ -3,17 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Model;
 
 class Articulos extends Model
 {
     use HasFactory;
 
-    protected  $table = 'tbl_articulos';
+    protected $connection = 'mongodb';
+    protected $collection = 'tbl_articulos';
+    protected $primarykey = "_id";
 
-    protected $primaryKey = 'id_articulo';
-
-    public function tbl_tipo_documento(){
+   /* public function tbl_tipo_documento(){
         return $this->hasOne(TipoDocumento::class, 'id_tipo_documento','id_tipo_documento');
     }
 
@@ -31,6 +32,6 @@ class Articulos extends Model
 
     public function carrera(){
         return $this->hasOne(Carrera::class, 'id_carrera','id_carrera');
-    }
+    }*/
 
 }

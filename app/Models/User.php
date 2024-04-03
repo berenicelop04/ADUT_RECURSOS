@@ -51,7 +51,7 @@ class User extends Authenticatable
     ];
     // MongoDB -> Se comento por que voy a usar sql
     protected $connection = "mongodb";
-    protected $collection = "user"; //este es el nombre de la base de datos en mongo
+    protected $collection = "tbl_usuarios"; //este es el nombre de la base de datos en mongo
     protected $primarykey = "id"; //el id es el de la coleccion de mongo
 
 
@@ -66,6 +66,6 @@ class User extends Authenticatable
 
     public function rol(){
         return $this->hasOne(Rol::class, 'id_rol','id_rol');
-    }
-    
+}
+
 }

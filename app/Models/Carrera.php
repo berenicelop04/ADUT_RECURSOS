@@ -3,14 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Model; SQL
+use MongoDB\Laravel\Eloquent\Model; //MONGODB
 
 class Carrera extends Model
 {
     use HasFactory;
 
-    protected  $table = 'carreras';
 
-    protected $primaryKey = 'id_carrera';
+      // MongoDB -> Se comento por que voy a usar sql
+      protected $connection = "mongodb";
+      protected $collection = "tbl_carreras"; //este es el nombre de la base de datos en mongo
+      protected $primarykey = "id"; //el id es el de la coleccion de mongo
+  
+
+    //protected  $table = 'carreras';
+
+    //protected $primaryKey = 'id_carrera';
 
 }
