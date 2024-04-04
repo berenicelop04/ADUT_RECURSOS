@@ -118,7 +118,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/articulos/list', [ArticulosController::class, 'index'])->name('articulos.index');
     Route::get('/articulos/create', [ArticulosController::class, 'create'])->name('articulos.create');
     Route::get('/articulos/edit/{id}', [ArticulosController::class, 'edit'])->name('articulos.edit');
-    Route::delete('/articulos/delete/{id}', [ArticulosController::class, 'destroy'])->name('articulos.destroy');
+    Route::delete('/articulos/{articulos}', [App\Http\Controllers\ArticulosController::class, 'destroy'])->name('articulos.destroy');
     Route::post('/articulos/store', [ArticulosController::class, 'store'])->name('articulos.store');
     Route::put('/articulos/update/{id}', [ArticulosController::class, 'update'])->name('articulos.update');
 });
@@ -139,7 +139,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/guias/list', [GuiasController::class, 'index'])->name('guias.index');
     Route::get('/guias/create', [GuiasController::class, 'create'])->name('guias.create');
     Route::get('/guias/edit/{id}', [GuiasController::class, 'edit'])->name('guias.edit');
-    Route::delete('/guias/delete/{id}', [GuiasController::class, 'destroy'])->name('guias.destroy');
+    Route::delete('/guias/{guias}', [App\Http\Controllers\GuiasController::class, 'destroy'])->name('guias.destroy');
     Route::post('/guias/store', [GuiasController::class, 'store'])->name('guias.store');
     Route::put('/guias/update/{id}', [GuiasController::class, 'update'])->name('guias.update');
 });

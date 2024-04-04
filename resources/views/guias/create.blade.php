@@ -56,12 +56,12 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="form-container">
-                <h2 class="text-center mb-4">Agregar Nuevo Libro</h2>
-                <form method="POST" action="{{ route('articulos.store') }}" enctype="multipart/form-data">
+                <h2 class="text-center mb-4">Agregar Nueva Guia</h2>
+                <form method="POST" action="{{ route('guias.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="Titulo">Título del Articulo:</label>
-                        <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Título del Articulo">
+                        <label for="Titulo">Título de la Guia:</label>
+                        <input type="text" name="Titulo" class="form-control" id="Titulo" placeholder="Título de la Guia">
                     </div>
                     <div class="form-group">
                         <label for="id_tipo_documento">Tipo de Documento:</label>
@@ -100,6 +100,14 @@
                         <select name="id_carrera" id="id_carrera" class="form-control">
                             @foreach ($carreras as $carrera)
                                 <option value="{{ $carrera->id }}">{{ $carrera->carrera }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_materia">Materia:</label>
+                        <select name="id_materia" id="id_materia" class="form-control">
+                            @foreach ($materias as $materia)
+                                <option value="{{ $materia->id }}">{{ $materia->materia }}</option>
                             @endforeach
                         </select>
                     </div>

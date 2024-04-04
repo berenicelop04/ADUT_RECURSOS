@@ -89,6 +89,7 @@ class LibrosController extends Controller
         
         $libros = Libros::find($id);
         $autores = Autor::all();
+        
         return view('libros.edit', compact('libros', 'autores'));
     }
 
